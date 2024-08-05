@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
     console.log("data fetched");
     res.status(200).json(data);
   } catch (error) {
-    console.log(err);
+    console.log(error);
     res.status(500).json({ error: "internal server Error" });
   }
 });

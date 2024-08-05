@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
-const db = require("./db.js");
+require("dotenv").config();
+const db = "./db";
 
 const bodyparser = require("body-parser");
+app.use(bodyparser.json());
+const PORT = process.env.PORT || 3000;
 
 const mongoose = require("mongoose");
-
-app.use(bodyparser.json());
 
 app.get("/", function (req, res) {
   res.send("Welcome to our hotel");
